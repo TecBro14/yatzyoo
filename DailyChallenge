@@ -1,0 +1,48 @@
+{
+  "name": "DailyChallenge",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "Date in YYYY-MM-DD format"
+    },
+    "challenge_type": {
+      "type": "string",
+      "enum": [
+        "high_score",
+        "specific_combo",
+        "yahtzee_count"
+      ],
+      "description": "Type of challenge"
+    },
+    "target": {
+      "type": "number",
+      "description": "Target score or count to achieve"
+    },
+    "description": {
+      "type": "string",
+      "description": "Challenge description"
+    },
+    "completions": {
+      "type": "array",
+      "description": "Users who completed this challenge",
+      "items": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "completed_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "date",
+    "challenge_type",
+    "target",
+    "description"
+  ]
+}
