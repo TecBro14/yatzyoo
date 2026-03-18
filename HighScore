@@ -1,0 +1,27 @@
+{
+  "name": "HighScore",
+  "type": "object",
+  "properties": {
+    "player_email": {
+      "type": "string"
+    },
+    "player_name": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "single",
+        "online"
+      ]
+    }
+  },
+  "required": [
+    "player_email",
+    "player_name",
+    "score"
+  ]
+}
