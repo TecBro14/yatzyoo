@@ -1,0 +1,84 @@
+{
+  "name": "GameRoom",
+  "type": "object",
+  "properties": {
+    "room_code": {
+      "type": "string",
+      "description": "5-digit room code"
+    },
+    "host_email": {
+      "type": "string"
+    },
+    "players": {
+      "type": "array",
+      "description": "Array of player objects with email, name, scores",
+      "items": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "scores": {
+            "type": "object"
+          },
+          "total": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "current_player_index": {
+      "type": "number",
+      "default": 0
+    },
+    "dice": {
+      "type": "array",
+      "description": "Current dice values",
+      "items": {
+        "type": "number"
+      }
+    },
+    "held_dice": {
+      "type": "array",
+      "description": "Which dice are held",
+      "items": {
+        "type": "boolean"
+      }
+    },
+    "rolls_left": {
+      "type": "number",
+      "default": 3
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "waiting",
+        "playing",
+        "finished"
+      ],
+      "default": "waiting"
+    },
+    "max_players": {
+      "type": "number",
+      "default": 4
+    },
+    "round": {
+      "type": "number",
+      "default": 1
+    },
+    "reactions": {
+      "type": "array",
+      "description": "Player reactions during game",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "room_code",
+    "host_email"
+  ]
+}
