@@ -1,0 +1,81 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "description": "User's unique username"
+    },
+    "avatar": {
+      "type": "object",
+      "description": "Avatar customization",
+      "properties": {
+        "face": {
+          "type": "string",
+          "enum": [
+            "happy",
+            "cool",
+            "silly",
+            "determined",
+            "sleepy"
+          ],
+          "default": "happy"
+        },
+        "hair": {
+          "type": "string",
+          "enum": [
+            "short",
+            "long",
+            "curly",
+            "spiky",
+            "bald"
+          ],
+          "default": "short"
+        },
+        "eyes": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "round",
+            "squint",
+            "wink",
+            "star"
+          ],
+          "default": "normal"
+        },
+        "skin": {
+          "type": "string",
+          "enum": [
+            "light",
+            "tan",
+            "brown",
+            "dark",
+            "blue",
+            "green"
+          ],
+          "default": "light"
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "games_played": {
+          "type": "number",
+          "default": 0
+        },
+        "challenges_completed": {
+          "type": "number",
+          "default": 0
+        },
+        "highest_score": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    }
+  },
+  "required": [
+    "username"
+  ]
+}
